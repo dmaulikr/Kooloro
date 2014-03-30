@@ -1,5 +1,5 @@
 //
-//  OOViewController.h
+//  OOTutoViewController.h
 //  Kooloro
 //
 //  Created by hugo mazet on 30/03/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OOViewController : UIViewController
+@interface OOTutoViewController : UIViewController
 
 @end
