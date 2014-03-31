@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *levelTypeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *I;
 @property (weak, nonatomic) IBOutlet UIButton *II;
 @property (weak, nonatomic) IBOutlet UIButton *III;

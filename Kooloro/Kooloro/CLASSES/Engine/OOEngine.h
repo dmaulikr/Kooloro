@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    OOEngineLevelTypeText,
+    OOEngineLevelTypeColor,
+    OOEngineLevelTypeMatch,
+} OOEngineLevelType;
+
+typedef enum : NSUInteger {
+    OOEnginecolorRed,
+    OOEnginecolorGreen,
+    OOEnginecolorBlue,
+    OOEnginecolorYellow,
+    OOEnginecolorPurple
+} OOEngineColor;
+
 @class OOEngine;
 
 @protocol OOEngineProtocol <NSObject>
@@ -24,5 +38,9 @@
 
 - (void)startGame;
 - (void)openLevel;
+- (void)correct:(OOEngineColor)response forAnswer:(NSDictionary*)answer;
+
+- (UIColor*)getColor:(OOEngineColor)color;
+- (NSString*)getText:(OOEngineColor)color;
 
 @end

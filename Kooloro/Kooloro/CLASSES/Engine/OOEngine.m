@@ -8,19 +8,6 @@
 
 #import "OOEngine.h"
 
-typedef enum : NSUInteger {
-    OOEngineLevelTypeMatch,
-    OOEngineLevelTypeText,
-    OOEngineLevelTypeColor,
-} OOEngineLevelType;
-
-typedef enum : NSUInteger {
-    OOEnginecolorRed,
-    OOEnginecolorGreen,
-    OOEnginecolorBlue,
-    OOEnginecolorYellow,
-    OOEnginecolorPurple
-} OOEngineColor;
 
 #define totalColor      5
 
@@ -35,11 +22,6 @@ typedef enum : NSUInteger {
 @interface OOEngine()
 
 @property (nonatomic) double score;
-
-@property (nonatomic) OOEngineColor targetColor;
-@property (nonatomic) OOEngineColor targetText;
-@property (nonatomic, strong) NSMutableArray *possibleResponse;
-@property (nonatomic, strong) NSMutableDictionary *theAnswer;
 
 @end
 
@@ -58,8 +40,6 @@ typedef enum : NSUInteger {
     self = [super init];
     if (self)
     {
-        self.theAnswer = [NSMutableDictionary dictionary];
-        self.possibleResponse = [NSMutableArray array];
     }
     return self;
 }
@@ -71,9 +51,6 @@ typedef enum : NSUInteger {
 - (void)startGame
 {
     self.score = 0;
-    self.theAnswer = [NSMutableDictionary dictionary];
-    self.possibleResponse = [NSMutableArray array];
-    
     [self openLevel];
 }
 
@@ -82,47 +59,56 @@ typedef enum : NSUInteger {
 // ----------------------------------------------------------------------------------------------
 - (void)openLevel
 {
-    OOEngineLevelType type = [self generateLevelType];
+    NSDictionary *answer = [NSDictionary dictionary];
+    NSArray *possibleResponse = [NSArray array];
+    OOEngineColor levelColor;
+    OOEngineColor levelText;
+    OOEngineLevelType levelType = [self generateLevelType];
     
-    switch (type)
-    {
-        case OOEngineLevelTypeMatch:
-            
-            break;
-            
-        case OOEngineLevelTypeText:
-            
-            break;
-            
-        case OOEngineLevelTypeColor:
-            
-            break;
-            
-        default:
-            break;
-    }
+  
+    [self generateLevelColor:&levelColor andLevelText:&levelText forLevelType:levelType];
+    possibleResponse = [self generatePossibleResponseForLevelColor:levelColor levelText:levelText andLevelType:levelType];
     
-    
-    [self generateTarget];
-    [self generateTarget];
-    [self generatePossibleResponse:type];
-    
-    self.theAnswer = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                      [self getColor:self.targetColor],@"targetColor",
-                      [self getText:self.targetText],@"targetText",
-                      self.possibleResponse,@"possibleResponse",
+    answer = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                      [NSNumber numberWithInt:levelType],@"levelType",
+                      [NSNumber numberWithInt:levelColor],@"levelColor",
+                      [NSNumber numberWithInt:levelText],@"levelText",
+                      possibleResponse,@"possibleResponse",
                       nil];
     
-    [self.delegate OOEngine:self levelOpen:self.theAnswer];
+    [self.delegate OOEngine:self levelOpen:answer];
     
 }
 
 // ----------------------------------------------------------------------------------------------
-// Game Over
+// Correction
 // ----------------------------------------------------------------------------------------------
-- (void)gameOver
+- (void)correct:(OOEngineColor)response forAnswer:(NSDictionary*)answer;
 {
-    
+    switch ([[answer objectForKey:@"levelType"]integerValue])
+    {
+        case OOEngineLevelTypeMatch:
+            [self.delegate OOEngine:self levelSuccess:0];
+            break;
+            
+        case OOEngineLevelTypeColor:
+            if ([[answer objectForKey:@"levelColor"]integerValue] == response)
+                 [self.delegate OOEngine:self levelSuccess:0];
+            else
+                 [self.delegate OOEngine:self levelFaill:0];
+            break;
+
+        case OOEngineLevelTypeText:
+            if ([[answer objectForKey:@"levelText"]integerValue] == response)
+                [self.delegate OOEngine:self levelSuccess:0];
+            else
+                [self.delegate OOEngine:self levelFaill:0];
+            break;
+
+        default:
+            [self.delegate OOEngine:self levelFaill:0];
+            break;
+    }
 }
 
 
@@ -132,31 +118,45 @@ typedef enum : NSUInteger {
 // ----------------------------------------------------------------------------------------------
 - (OOEngineLevelType)generateLevelType
 {
-    OOEngineLevelType Type = arc4random() % 3;
+    OOEngineLevelType Type = arc4random() % 2;
     return Type;
 }
 
 // ----------------------------------------------------------------------------------------------
 // Generate Target
 // ----------------------------------------------------------------------------------------------
-- (void)generateTarget
+- (void)generateLevelColor:(OOEngineColor *)color andLevelText:(OOEngineColor *)text forLevelType:(OOEngineLevelType)type
 {
-    self.targetColor = arc4random() % totalColor;
-    self.targetText = arc4random() % totalColor;
+    *color = arc4random() % totalColor;
+    *text = arc4random() % totalColor;
 }
 
 // ----------------------------------------------------------------------------------------------
 // Generate Possible Response
 // ----------------------------------------------------------------------------------------------
-- (void)generatePossibleResponse:(OOEngineLevelType)levelType
+- (NSArray*)generatePossibleResponseForLevelColor:(OOEngineColor)color
+                                             levelText:(OOEngineColor)text
+                                          andLevelType:(OOEngineLevelType)levelType
 {
+    
+    NSMutableArray *response = [NSMutableArray array];
+    
     for (int i=0; i<4; i++)
     {
-        [self.possibleResponse addObject:[self getColor:arc4random() % totalColor]];
+        [response addObject:[NSNumber numberWithInt:arc4random() % totalColor]];
     }
     
-    [self.possibleResponse setObject:[self getColor:self.targetColor] atIndexedSubscript:arc4random() % 4];
-    [self.possibleResponse setObject:[self getColor:self.targetText] atIndexedSubscript:arc4random() % 4];
+    NSUInteger indexColor = arc4random() % 4;
+    NSUInteger indexText = arc4random() % 4;
+    [response setObject:[NSNumber numberWithInt:color] atIndexedSubscript:indexColor];
+        
+    while (indexColor == indexText) {
+        indexText = arc4random() % 4;
+    }
+    
+    [response setObject:[NSNumber numberWithInt:text] atIndexedSubscript:indexText];
+    
+    return response;
 }
 
 #pragma mark - Get color
