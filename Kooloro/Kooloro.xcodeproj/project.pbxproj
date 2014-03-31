@@ -21,11 +21,17 @@
 		2F04167518E8A77A0083CD1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F04165418E8A77A0083CD1E /* UIKit.framework */; };
 		2F04167D18E8A77A0083CD1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F04167B18E8A77A0083CD1E /* InfoPlist.strings */; };
 		2F04167F18E8A77A0083CD1E /* KooloroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04167E18E8A77A0083CD1E /* KooloroTests.m */; };
-		2F04169418E8AD490083CD1E /* OOGameOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04169318E8AD490083CD1E /* OOGameOnViewController.m */; };
-		2F04169718E8AD590083CD1E /* OOGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04169618E8AD590083CD1E /* OOGameOverViewController.m */; };
-		2F04169A18E8AD6B0083CD1E /* OOShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04169918E8AD6B0083CD1E /* OOShareViewController.m */; };
-		2F04169D18E8AD870083CD1E /* OOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04169C18E8AD870083CD1E /* OOHomeViewController.m */; };
-		2F0416A018E8ADA40083CD1E /* OOTutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04169F18E8ADA40083CD1E /* OOTutoViewController.m */; };
+		2F3899AB18E9618900671C4C /* OOEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3899AA18E9618900671C4C /* OOEngine.m */; };
+		2F4CB88618E94F3E007DCEBC /* OOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88518E94F3E007DCEBC /* OOHomeViewController.m */; };
+		2F4CB88918E94F4C007DCEBC /* OOGameOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88818E94F4C007DCEBC /* OOGameOnViewController.m */; };
+		2F4CB88C18E94F53007DCEBC /* OOGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88B18E94F53007DCEBC /* OOGameOverViewController.m */; };
+		2F4CB88F18E94F5A007DCEBC /* OOShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88E18E94F5A007DCEBC /* OOShareViewController.m */; };
+		2F4CB89218E94F62007DCEBC /* OOTutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB89118E94F62007DCEBC /* OOTutoViewController.m */; };
+		2F4CB89518E95081007DCEBC /* OOCoreFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB89418E95081007DCEBC /* OOCoreFont.m */; };
+		2F4CB89818E95087007DCEBC /* OOCoreColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB89718E95087007DCEBC /* OOCoreColor.m */; };
+		2F4CB8A318E9553A007DCEBC /* Static.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F4CB89D18E9553A007DCEBC /* Static.otf */; };
+		2F4CB8A418E9553A007DCEBC /* Static_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F4CB89E18E9553A007DCEBC /* Static_Bold.otf */; };
+		2F4CB8A518E9553A007DCEBC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4CB8A018E9553A007DCEBC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,16 +63,27 @@
 		2F04167A18E8A77A0083CD1E /* KooloroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KooloroTests-Info.plist"; sourceTree = "<group>"; };
 		2F04167C18E8A77A0083CD1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F04167E18E8A77A0083CD1E /* KooloroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KooloroTests.m; sourceTree = "<group>"; };
-		2F04169218E8AD490083CD1E /* OOGameOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOGameOnViewController.h; path = Controller/Game/OOGameOnViewController.h; sourceTree = "<group>"; };
-		2F04169318E8AD490083CD1E /* OOGameOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOGameOnViewController.m; path = Controller/Game/OOGameOnViewController.m; sourceTree = "<group>"; };
-		2F04169518E8AD590083CD1E /* OOGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOGameOverViewController.h; path = Controller/Game/OOGameOverViewController.h; sourceTree = "<group>"; };
-		2F04169618E8AD590083CD1E /* OOGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOGameOverViewController.m; path = Controller/Game/OOGameOverViewController.m; sourceTree = "<group>"; };
-		2F04169818E8AD6B0083CD1E /* OOShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOShareViewController.h; path = Controller/Share/OOShareViewController.h; sourceTree = "<group>"; };
-		2F04169918E8AD6B0083CD1E /* OOShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOShareViewController.m; path = Controller/Share/OOShareViewController.m; sourceTree = "<group>"; };
-		2F04169B18E8AD870083CD1E /* OOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOHomeViewController.h; path = Controller/Home/OOHomeViewController.h; sourceTree = "<group>"; };
-		2F04169C18E8AD870083CD1E /* OOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOHomeViewController.m; path = Controller/Home/OOHomeViewController.m; sourceTree = "<group>"; };
-		2F04169E18E8ADA40083CD1E /* OOTutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOTutoViewController.h; path = Controller/Tuto/OOTutoViewController.h; sourceTree = "<group>"; };
-		2F04169F18E8ADA40083CD1E /* OOTutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOTutoViewController.m; path = Controller/Tuto/OOTutoViewController.m; sourceTree = "<group>"; };
+		2F3899A918E9618900671C4C /* OOEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOEngine.h; path = CLASSES/Engine/OOEngine.h; sourceTree = "<group>"; };
+		2F3899AA18E9618900671C4C /* OOEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOEngine.m; path = CLASSES/Engine/OOEngine.m; sourceTree = "<group>"; };
+		2F4CB88418E94F3E007DCEBC /* OOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOHomeViewController.h; path = CLASSES/Controller/Home/OOHomeViewController.h; sourceTree = "<group>"; };
+		2F4CB88518E94F3E007DCEBC /* OOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOHomeViewController.m; path = CLASSES/Controller/Home/OOHomeViewController.m; sourceTree = "<group>"; };
+		2F4CB88718E94F4C007DCEBC /* OOGameOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOGameOnViewController.h; path = CLASSES/Controller/Game/OOGameOnViewController.h; sourceTree = "<group>"; };
+		2F4CB88818E94F4C007DCEBC /* OOGameOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOGameOnViewController.m; path = CLASSES/Controller/Game/OOGameOnViewController.m; sourceTree = "<group>"; };
+		2F4CB88A18E94F53007DCEBC /* OOGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOGameOverViewController.h; path = CLASSES/Controller/Game/OOGameOverViewController.h; sourceTree = "<group>"; };
+		2F4CB88B18E94F53007DCEBC /* OOGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOGameOverViewController.m; path = CLASSES/Controller/Game/OOGameOverViewController.m; sourceTree = "<group>"; };
+		2F4CB88D18E94F5A007DCEBC /* OOShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOShareViewController.h; path = CLASSES/Controller/Share/OOShareViewController.h; sourceTree = "<group>"; };
+		2F4CB88E18E94F5A007DCEBC /* OOShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOShareViewController.m; path = CLASSES/Controller/Share/OOShareViewController.m; sourceTree = "<group>"; };
+		2F4CB89018E94F62007DCEBC /* OOTutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOTutoViewController.h; path = CLASSES/Controller/Tuto/OOTutoViewController.h; sourceTree = "<group>"; };
+		2F4CB89118E94F62007DCEBC /* OOTutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOTutoViewController.m; path = CLASSES/Controller/Tuto/OOTutoViewController.m; sourceTree = "<group>"; };
+		2F4CB89318E95081007DCEBC /* OOCoreFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCoreFont.h; path = CLASSES/Core/Font/OOCoreFont.h; sourceTree = "<group>"; };
+		2F4CB89418E95081007DCEBC /* OOCoreFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCoreFont.m; path = CLASSES/Core/Font/OOCoreFont.m; sourceTree = "<group>"; };
+		2F4CB89618E95087007DCEBC /* OOCoreColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCoreColor.h; path = CLASSES/Core/Color/OOCoreColor.h; sourceTree = "<group>"; };
+		2F4CB89718E95087007DCEBC /* OOCoreColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOCoreColor.m; path = CLASSES/Core/Color/OOCoreColor.m; sourceTree = "<group>"; };
+		2F4CB89A18E9518A007DCEBC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = CLASSES/Core/Constants/Constants.h; sourceTree = "<group>"; };
+		2F4CB89D18E9553A007DCEBC /* Static.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Static.otf; sourceTree = "<group>"; };
+		2F4CB89E18E9553A007DCEBC /* Static_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Static_Bold.otf; sourceTree = "<group>"; };
+		2F4CB8A118E9553A007DCEBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F4CB8A218E9553A007DCEBC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +148,9 @@
 				2F04168918E8A8A40083CD1E /* CONTROLLER */,
 				2F04168A18E8A8AC0083CD1E /* VIEW */,
 				2F04168B18E8A8B20083CD1E /* MODEL */,
+				2F4CB88318E94E18007DCEBC /* ENGINE */,
+				2F0416A118E8B0950083CD1E /* CORE */,
+				2F4CB89B18E9552C007DCEBC /* ASSETS */,
 				2F04165718E8A77A0083CD1E /* Supporting Files */,
 			);
 			path = Kooloro;
@@ -204,8 +224,8 @@
 		2F04168C18E8ACA90083CD1E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2F04169B18E8AD870083CD1E /* OOHomeViewController.h */,
-				2F04169C18E8AD870083CD1E /* OOHomeViewController.m */,
+				2F4CB88418E94F3E007DCEBC /* OOHomeViewController.h */,
+				2F4CB88518E94F3E007DCEBC /* OOHomeViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -213,8 +233,8 @@
 		2F04168D18E8ACB10083CD1E /* Tuto */ = {
 			isa = PBXGroup;
 			children = (
-				2F04169E18E8ADA40083CD1E /* OOTutoViewController.h */,
-				2F04169F18E8ADA40083CD1E /* OOTutoViewController.m */,
+				2F4CB89018E94F62007DCEBC /* OOTutoViewController.h */,
+				2F4CB89118E94F62007DCEBC /* OOTutoViewController.m */,
 			);
 			name = Tuto;
 			sourceTree = "<group>";
@@ -222,8 +242,8 @@
 		2F04168E18E8ACB60083CD1E /* Share */ = {
 			isa = PBXGroup;
 			children = (
-				2F04169818E8AD6B0083CD1E /* OOShareViewController.h */,
-				2F04169918E8AD6B0083CD1E /* OOShareViewController.m */,
+				2F4CB88D18E94F5A007DCEBC /* OOShareViewController.h */,
+				2F4CB88E18E94F5A007DCEBC /* OOShareViewController.m */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -240,8 +260,8 @@
 		2F04169018E8AD070083CD1E /* ON */ = {
 			isa = PBXGroup;
 			children = (
-				2F04169218E8AD490083CD1E /* OOGameOnViewController.h */,
-				2F04169318E8AD490083CD1E /* OOGameOnViewController.m */,
+				2F4CB88718E94F4C007DCEBC /* OOGameOnViewController.h */,
+				2F4CB88818E94F4C007DCEBC /* OOGameOnViewController.m */,
 			);
 			name = ON;
 			sourceTree = "<group>";
@@ -249,10 +269,83 @@
 		2F04169118E8AD0D0083CD1E /* OVER */ = {
 			isa = PBXGroup;
 			children = (
-				2F04169518E8AD590083CD1E /* OOGameOverViewController.h */,
-				2F04169618E8AD590083CD1E /* OOGameOverViewController.m */,
+				2F4CB88A18E94F53007DCEBC /* OOGameOverViewController.h */,
+				2F4CB88B18E94F53007DCEBC /* OOGameOverViewController.m */,
 			);
 			name = OVER;
+			sourceTree = "<group>";
+		};
+		2F0416A118E8B0950083CD1E /* CORE */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89918E9517A007DCEBC /* Constants */,
+				2F0416A318E8B1000083CD1E /* Color */,
+				2F0416A218E8B0F90083CD1E /* Font */,
+			);
+			name = CORE;
+			sourceTree = "<group>";
+		};
+		2F0416A218E8B0F90083CD1E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89318E95081007DCEBC /* OOCoreFont.h */,
+				2F4CB89418E95081007DCEBC /* OOCoreFont.m */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		2F0416A318E8B1000083CD1E /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89618E95087007DCEBC /* OOCoreColor.h */,
+				2F4CB89718E95087007DCEBC /* OOCoreColor.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		2F4CB88318E94E18007DCEBC /* ENGINE */ = {
+			isa = PBXGroup;
+			children = (
+				2F3899A918E9618900671C4C /* OOEngine.h */,
+				2F3899AA18E9618900671C4C /* OOEngine.m */,
+			);
+			name = ENGINE;
+			sourceTree = "<group>";
+		};
+		2F4CB89918E9517A007DCEBC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89A18E9518A007DCEBC /* Constants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		2F4CB89B18E9552C007DCEBC /* ASSETS */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89C18E9553A007DCEBC /* Font */,
+				2F4CB89F18E9553A007DCEBC /* Langage */,
+			);
+			name = ASSETS;
+			sourceTree = "<group>";
+		};
+		2F4CB89C18E9553A007DCEBC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB89D18E9553A007DCEBC /* Static.otf */,
+				2F4CB89E18E9553A007DCEBC /* Static_Bold.otf */,
+			);
+			name = Font;
+			path = ASSETS/Font;
+			sourceTree = "<group>";
+		};
+		2F4CB89F18E9553A007DCEBC /* Langage */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CB8A018E9553A007DCEBC /* Localizable.strings */,
+			);
+			name = Langage;
+			path = ASSETS/Langage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +408,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 2F04164418E8A77A0083CD1E;
 			productRefGroup = 2F04164E18E8A77A0083CD1E /* Products */;
@@ -334,7 +428,10 @@
 			files = (
 				2F04166718E8A77A0083CD1E /* Main_iPad.storyboard in Resources */,
 				2F04166C18E8A77A0083CD1E /* Images.xcassets in Resources */,
+				2F4CB8A418E9553A007DCEBC /* Static_Bold.otf in Resources */,
+				2F4CB8A518E9553A007DCEBC /* Localizable.strings in Resources */,
 				2F04166418E8A77A0083CD1E /* Main_iPhone.storyboard in Resources */,
+				2F4CB8A318E9553A007DCEBC /* Static.otf in Resources */,
 				2F04165B18E8A77A0083CD1E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,12 +452,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F04166118E8A77A0083CD1E /* OOAppDelegate.m in Sources */,
-				2F04169718E8AD590083CD1E /* OOGameOverViewController.m in Sources */,
+				2F3899AB18E9618900671C4C /* OOEngine.m in Sources */,
+				2F4CB88C18E94F53007DCEBC /* OOGameOverViewController.m in Sources */,
+				2F4CB89818E95087007DCEBC /* OOCoreColor.m in Sources */,
 				2F04165D18E8A77A0083CD1E /* main.m in Sources */,
-				2F04169A18E8AD6B0083CD1E /* OOShareViewController.m in Sources */,
-				2F04169418E8AD490083CD1E /* OOGameOnViewController.m in Sources */,
-				2F0416A018E8ADA40083CD1E /* OOTutoViewController.m in Sources */,
-				2F04169D18E8AD870083CD1E /* OOHomeViewController.m in Sources */,
+				2F4CB89518E95081007DCEBC /* OOCoreFont.m in Sources */,
+				2F4CB88618E94F3E007DCEBC /* OOHomeViewController.m in Sources */,
+				2F4CB88F18E94F5A007DCEBC /* OOShareViewController.m in Sources */,
+				2F4CB89218E94F62007DCEBC /* OOTutoViewController.m in Sources */,
+				2F4CB88918E94F4C007DCEBC /* OOGameOnViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +513,15 @@
 				2F04167C18E8A77A0083CD1E /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2F4CB8A018E9553A007DCEBC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F4CB8A118E9553A007DCEBC /* en */,
+				2F4CB8A218E9553A007DCEBC /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -577,6 +686,7 @@
 				2F04168418E8A77A0083CD1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F04168518E8A77A0083CD1E /* Build configuration list for PBXNativeTarget "KooloroTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +695,7 @@
 				2F04168718E8A77A0083CD1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

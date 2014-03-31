@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Kooloro
+
+  Created by hugo mazet on 14/07/13.
+  Copyright (c) 2013 hugo mazet. All rights reserved.
+*/
+
+
+// ----------------------------------------------------------------------------------------------
+// GENERICS
+// ----------------------------------------------------------------------------------------------
+
+// BUTTON
+"GENERICS_play" = "translate";
+"GENERICS_share" = "translate";
+"GENERICS_score" = "translate";
+"GENERICS_tuto" = "translate";
+
+
