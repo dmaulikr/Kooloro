@@ -50,21 +50,33 @@
     // BACK COLOR
     [self.view setBackgroundColor:[OOCoreColor whiteBack]];
     [self.playButton setBackgroundColor:[OOCoreColor redBack]];
+    [self.homeButton setBackgroundColor:[OOCoreColor redBack]];
     
     // TEXT COLOR
     [self.gameOverTitle setTextColor:[OOCoreColor redText]];
     [self.yourScoreLabel setTextColor:[OOCoreColor lightBlackText]];
     [self.scoreLabel setTextColor:[OOCoreColor blackText]];
     [self.playButton setTitleColor:[OOCoreColor whiteText] forState:UIControlStateNormal];
+    [self.homeButton setTitleColor:[OOCoreColor whiteText] forState:UIControlStateNormal];
     
     // TEXT FONT
     [self.gameOverTitle setFont:[OOCoreFont GetFontBig]];
     [self.yourScoreLabel setFont:[OOCoreFont GetFontMedium]];
     [self.scoreLabel setFont:[OOCoreFont GetFontBigBold]];
     [self.playButton.titleLabel setFont:[OOCoreFont GetFontMedium]];
+    [self.homeButton.titleLabel setFont:[OOCoreFont GetFontMedium]];
     
-    // CORER
-    [self.playButton.layer setCornerRadius:OOMagicalNumber];
+    
+    // TEXT
+    [self.scoreLabel setText:NSLocalizedString(@"GENERICS_score", @"votre score")];
+    [self.playButton setTitle:NSLocalizedString(@"GENERICS_play", @"jouer") forState:UIControlStateNormal];
+    [self.homeButton setTitle:NSLocalizedString(@"GENERICS_menu", @"menu") forState:UIControlStateNormal];
+    
+    // CORNER
+    [self.playButton.layer setCornerRadius:OOCornerRadius];
+    [self.homeButton.layer setCornerRadius:OOCornerRadius];
+    
+
 }
 
 
@@ -79,6 +91,11 @@
 - (IBAction)playGotPressed:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)homeGotPressed:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

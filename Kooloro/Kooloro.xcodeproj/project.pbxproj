@@ -25,8 +25,8 @@
 		2F35B45418EA03DE006E1E5D /* text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45218EA03DE006E1E5D /* text@2x.png */; };
 		2F35B45A18EA06DE006E1E5D /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45918EA06DE006E1E5D /* color.png */; };
 		2F35B45C18EA06E3006E1E5D /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45B18EA06E3006E1E5D /* text.png */; };
+		2F35B45F18EA20A5006E1E5D /* OOTimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F35B45E18EA20A5006E1E5D /* OOTimeEngine.m */; };
 		2F3899AB18E9618900671C4C /* OOEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3899AA18E9618900671C4C /* OOEngine.m */; };
-		2F3899B818E9B84D00671C4C /* HMTimeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3899B718E9B84D00671C4C /* HMTimeBar.m */; };
 		2F4CB88618E94F3E007DCEBC /* OOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88518E94F3E007DCEBC /* OOHomeViewController.m */; };
 		2F4CB88918E94F4C007DCEBC /* OOGameOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88818E94F4C007DCEBC /* OOGameOnViewController.m */; };
 		2F4CB88C18E94F53007DCEBC /* OOGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4CB88B18E94F53007DCEBC /* OOGameOverViewController.m */; };
@@ -72,10 +72,10 @@
 		2F35B45218EA03DE006E1E5D /* text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text@2x.png"; sourceTree = "<group>"; };
 		2F35B45918EA06DE006E1E5D /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
 		2F35B45B18EA06E3006E1E5D /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
+		2F35B45D18EA20A5006E1E5D /* OOTimeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOTimeEngine.h; path = CLASSES/Engine/OOTimeEngine.h; sourceTree = "<group>"; };
+		2F35B45E18EA20A5006E1E5D /* OOTimeEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOTimeEngine.m; path = CLASSES/Engine/OOTimeEngine.m; sourceTree = "<group>"; };
 		2F3899A918E9618900671C4C /* OOEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOEngine.h; path = CLASSES/Engine/OOEngine.h; sourceTree = "<group>"; };
 		2F3899AA18E9618900671C4C /* OOEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOEngine.m; path = CLASSES/Engine/OOEngine.m; sourceTree = "<group>"; };
-		2F3899B618E9B84D00671C4C /* HMTimeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTimeBar.h; path = Kooloro/LIBRARY/HMTimeBar/HMTimeBar.h; sourceTree = SOURCE_ROOT; };
-		2F3899B718E9B84D00671C4C /* HMTimeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTimeBar.m; path = Kooloro/LIBRARY/HMTimeBar/HMTimeBar.m; sourceTree = SOURCE_ROOT; };
 		2F4CB88418E94F3E007DCEBC /* OOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOHomeViewController.h; path = CLASSES/Controller/Home/OOHomeViewController.h; sourceTree = "<group>"; };
 		2F4CB88518E94F3E007DCEBC /* OOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOHomeViewController.m; path = CLASSES/Controller/Home/OOHomeViewController.m; sourceTree = "<group>"; };
 		2F4CB88718E94F4C007DCEBC /* OOGameOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOGameOnViewController.h; path = CLASSES/Controller/Game/OOGameOnViewController.h; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 				2F4CB88318E94E18007DCEBC /* ENGINE */,
 				2F0416A118E8B0950083CD1E /* CORE */,
 				2F4CB89B18E9552C007DCEBC /* ASSETS */,
-				2F3899B118E9B59800671C4C /* LIBRARY */,
 				2F04165718E8A77A0083CD1E /* Supporting Files */,
 			);
 			path = Kooloro;
@@ -327,29 +326,13 @@
 			path = ASSETS/Images;
 			sourceTree = "<group>";
 		};
-		2F3899B118E9B59800671C4C /* LIBRARY */ = {
-			isa = PBXGroup;
-			children = (
-				2F3899B218E9B59800671C4C /* TimeBar */,
-			);
-			path = LIBRARY;
-			sourceTree = "<group>";
-		};
-		2F3899B218E9B59800671C4C /* TimeBar */ = {
-			isa = PBXGroup;
-			children = (
-				2F3899B618E9B84D00671C4C /* HMTimeBar.h */,
-				2F3899B718E9B84D00671C4C /* HMTimeBar.m */,
-			);
-			name = TimeBar;
-			path = HMProgressView;
-			sourceTree = "<group>";
-		};
 		2F4CB88318E94E18007DCEBC /* ENGINE */ = {
 			isa = PBXGroup;
 			children = (
 				2F3899A918E9618900671C4C /* OOEngine.h */,
 				2F3899AA18E9618900671C4C /* OOEngine.m */,
+				2F35B45D18EA20A5006E1E5D /* OOTimeEngine.h */,
+				2F35B45E18EA20A5006E1E5D /* OOTimeEngine.m */,
 			);
 			name = ENGINE;
 			sourceTree = "<group>";
@@ -507,7 +490,7 @@
 				2F4CB89818E95087007DCEBC /* OOCoreColor.m in Sources */,
 				2F04165D18E8A77A0083CD1E /* main.m in Sources */,
 				2F4CB89518E95081007DCEBC /* OOCoreFont.m in Sources */,
-				2F3899B818E9B84D00671C4C /* HMTimeBar.m in Sources */,
+				2F35B45F18EA20A5006E1E5D /* OOTimeEngine.m in Sources */,
 				2F4CB88618E94F3E007DCEBC /* OOHomeViewController.m in Sources */,
 				2F4CB88F18E94F5A007DCEBC /* OOShareViewController.m in Sources */,
 				2F4CB89218E94F62007DCEBC /* OOTutoViewController.m in Sources */,

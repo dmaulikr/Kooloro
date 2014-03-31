@@ -148,13 +148,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mwp-Mh-Ebb">
-                                <rect key="frame" x="120" y="412" width="80" height="40"/>
+                                <rect key="frame" x="178" y="412" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="play">
+                                <state key="normal" title="again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playGotPressed:" destination="zMh-Yj-jaw" eventType="touchUpInside" id="rAY-Cn-d0W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fkS-LR-KFA">
+                                <rect key="frame" x="70" y="412" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="homeGotPressed:" destination="zMh-Yj-jaw" eventType="touchUpInside" id="2wm-N7-aco"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -163,6 +173,7 @@
                     <navigationItem key="navigationItem" id="FqS-FW-Bbq"/>
                     <connections>
                         <outlet property="gameOverTitle" destination="KqX-xy-kx7" id="gBy-io-mKo"/>
+                        <outlet property="homeButton" destination="fkS-LR-KFA" id="qS2-B8-6r9"/>
                         <outlet property="playButton" destination="Mwp-Mh-Ebb" id="TUE-KU-VWi"/>
                         <outlet property="scoreLabel" destination="tWp-Ix-AMg" id="pS6-6M-vil"/>
                         <outlet property="yourScoreLabel" destination="gmP-Bn-09L" id="oYm-D8-KJQ"/>

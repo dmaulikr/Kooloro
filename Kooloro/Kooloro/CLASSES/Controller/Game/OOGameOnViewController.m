@@ -7,7 +7,6 @@
 //
 
 #import "OOGameOnViewController.h"
-#import "HMTimeBar.h"
 #import "OOGameOverViewController.h"
 
 //*********************************************************************************
@@ -20,7 +19,6 @@
 
 @interface OOGameOnViewController ()
 
-@property (nonatomic, strong) HMTimeBar *timeBar;
 @property (nonatomic, strong) OOEngine *gameEngine;
 @property (nonatomic, strong) NSDictionary *level;
 
@@ -54,15 +52,11 @@
 {
     [super viewDidLoad];
     
-    // time bar
-    self.timeBar = [[HMTimeBar alloc]initWithFrame:CGRectMake(0, 0, 200, 8) andDuration:5];
-    [self.timeBar setCenter:self.view.center];
-    [self.timeBar setDelegate:self];
-    [self.view addSubview:self.timeBar];
-    
     // game engine
-    self.gameEngine  = [[OOEngine alloc]init];
+    self.gameEngine  = [[OOEngine alloc]initWithTimeEngineFrame:CGRectMake(0, 0, 200, 8)];
     [self.gameEngine setDelegate:self];
+    [self.gameEngine.timeEngine setCenter:self.view.center];
+    [self.view addSubview:self.gameEngine.timeEngine];
     
     // button tag
     [self.I setTag:0];
@@ -99,11 +93,11 @@
     [self.targetLabel setText:@""];
     
     // CORNER + BORDER
-    [self.levelTypeImageView.layer setCornerRadius:OOMagicalNumber];
+    [self.levelTypeImageView.layer setCornerRadius:OOCornerRadius];
     self.I.layer.cornerRadius =
     self.II.layer.cornerRadius =
     self.III.layer.cornerRadius =
-    self.IV.layer.cornerRadius = OOMagicalNumber;
+    self.IV.layer.cornerRadius = OOCornerRadius;
     
 }
 
@@ -114,9 +108,9 @@
 {
     [super viewWillAppear:animated];
     
+    // START GAME
     [self.scoreLabel setText:@"0"];
     [self.gameEngine startGame];
-    [self.timeBar start];
 }
 
 // ----------------------------------------------------------------------------------------------
@@ -154,9 +148,6 @@
     
     switch (levelType)
     {
-        case OOEngineLevelTypeMatch:
-            break;
-            
         case OOEngineLevelTypeColor:
             [self.levelTypeImageView setImage:[UIImage imageNamed:@"color.png"]];
             break;
@@ -171,7 +162,6 @@
     
     [self.targetLabel setTextColor:[self.gameEngine getColor:[[level objectForKey:@"levelColor"] integerValue]]];
     [self.targetLabel setText:[self.gameEngine getText:[[level objectForKey:@"levelText"] integerValue]]];
-    [self.timeBar setBarColor:self.targetLabel.textColor];
     
     [self.I setBackgroundColor:[self.gameEngine getColor:[[[level objectForKey:@"possibleResponse"] objectAtIndex:0] integerValue]]];
     [self.II setBackgroundColor:[self.gameEngine getColor:[[[level objectForKey:@"possibleResponse"] objectAtIndex:1] integerValue]]];
@@ -184,38 +174,18 @@
 // ----------------------------------------------------------------------------------------------
 - (void)OOEngine:(OOEngine*)engine levelSuccess:(double)score
 {
-    [self.gameEngine openLevel];
-    [self.timeBar start];
-}
-
-// ----------------------------------------------------------------------------------------------
-// Level fail
-// ----------------------------------------------------------------------------------------------
-- (void)OOEngine:(OOEngine*)engine levelFaill:(double)score
-{
-    [self.timeBar stop];
-    [self performSegueWithIdentifier:@"SegueGameOver" sender:self];
-}
-
-
-#pragma mark - HMTimeBar Delegate
-
-// ----------------------------------------------------------------------------------------------
-// Time runing out
-// ----------------------------------------------------------------------------------------------
-- (void)HMProgressBarTimeEnd:(HMTimeBar*)timeBar
-{
-    [self.gameEngine stopGame];
-}
-
-// ----------------------------------------------------------------------------------------------
-// Time stopped
-// ----------------------------------------------------------------------------------------------
-- (void)HMProgressBarStoped:(HMTimeBar *)timeBar score:(double)score
-{
-    score += [self.scoreLabel.text doubleValue];
-    
     [self.scoreLabel setText:[NSString stringWithFormat:@"%.0f",score]];
+    // load next level
+    [self.gameEngine openLevel];
+}
+
+// ----------------------------------------------------------------------------------------------
+// Game Over
+// ----------------------------------------------------------------------------------------------
+- (void)OOEngine:(OOEngine*)engine gameOver:(double)score;
+{
+    [self.scoreLabel setText:[NSString stringWithFormat:@"%.0f",score]];
+    [self performSegueWithIdentifier:@"SegueGameOver" sender:self];
 }
 
 

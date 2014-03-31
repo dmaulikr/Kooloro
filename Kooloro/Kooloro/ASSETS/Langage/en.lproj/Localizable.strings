@@ -14,8 +14,10 @@
 // GENERIC
 "GENERICS_play" = "start";
 "GENERICS_share" = "share";
-"GENERICS_score" = "game center";
+"GENERICS_rank" = "game center";
 "GENERICS_tuto" = "how to";
+"GENERICS_menu" = "home";
+"GENERICS_score" = "your score";
 
 // COLOR
 "COLOR_red" = "red";

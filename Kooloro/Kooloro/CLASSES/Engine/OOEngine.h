@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "OOTimeEngine.h"
+
 typedef enum : NSUInteger {
     OOEngineLevelTypeText,
     OOEngineLevelTypeColor,
-    OOEngineLevelTypeMatch,
 } OOEngineLevelType;
 
 typedef enum : NSUInteger {
@@ -28,16 +29,18 @@ typedef enum : NSUInteger {
 
 - (void)OOEngine:(OOEngine*)engine levelOpen:(NSDictionary*)level;
 - (void)OOEngine:(OOEngine*)engine levelSuccess:(double)score;
-- (void)OOEngine:(OOEngine*)engine levelFaill:(double)score;
+- (void)OOEngine:(OOEngine*)engine gameOver:(double)score;
 
 @end
 
-@interface OOEngine : NSObject
+@interface OOEngine : NSObject <OOTimeEngineProtocol>
 
+@property (nonatomic, strong) OOTimeEngine *timeEngine;
 @property (nonatomic, weak) id<OOEngineProtocol> delegate;
 
+- (instancetype)initWithTimeEngineFrame:(CGRect)frame;
+
 - (void)startGame;
-- (void)stopGame;
 - (void)openLevel;
 - (void)correct:(OOEngineColor)response forAnswer:(NSDictionary*)answer;
 

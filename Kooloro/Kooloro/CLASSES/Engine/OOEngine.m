@@ -8,8 +8,9 @@
 
 #import "OOEngine.h"
 
-
-#define totalColor      5
+#define totalColor              5
+#define totalGameMode           2
+#define timeEngineDuration      5
 
 //*********************************************************************************
 //*********************************************************************************
@@ -35,11 +36,13 @@
 
 @implementation OOEngine
 
-- (instancetype)init
+- (instancetype)initWithTimeEngineFrame:(CGRect)frame
 {
     self = [super init];
     if (self)
     {
+        self.timeEngine = [[OOTimeEngine alloc]initWithFrame:frame andDuration:timeEngineDuration];
+        [self.timeEngine setDelegate:self];
     }
     return self;
 }
@@ -54,13 +57,6 @@
     [self openLevel];
 }
 
-// ----------------------------------------------------------------------------------------------
-// Stop Game
-// ----------------------------------------------------------------------------------------------
-- (void)stopGame
-{
-    [self.delegate OOEngine:self levelFaill:self.score];
-}
 
 // ----------------------------------------------------------------------------------------------
 // Open Level
@@ -71,12 +67,15 @@
     NSArray *possibleResponse = [NSArray array];
     OOEngineColor levelColor;
     OOEngineColor levelText;
-    OOEngineLevelType levelType = [self generateLevelType];
+    OOEngineLevelType levelType;
     
-  
+    // TYPE
+    levelType = [self generateLevelType];
+    // COLOR
     [self generateLevelColor:&levelColor andLevelText:&levelText forLevelType:levelType];
+    // RESPONSE
     possibleResponse = [self generatePossibleResponseForLevelColor:levelColor levelText:levelText andLevelType:levelType];
-    
+    // ANSWER
     answer = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                       [NSNumber numberWithInt:levelType],@"levelType",
                       [NSNumber numberWithInt:levelColor],@"levelColor",
@@ -84,6 +83,11 @@
                       possibleResponse,@"possibleResponse",
                       nil];
     
+    // Time Bar Color
+    [self.timeEngine setBarColor:[self getColor:levelColor]];
+    
+    // LET'S GO
+    [self.timeEngine start];
     [self.delegate OOEngine:self levelOpen:answer];
 }
 
@@ -92,30 +96,50 @@
 // ----------------------------------------------------------------------------------------------
 - (void)correct:(OOEngineColor)response forAnswer:(NSDictionary*)answer;
 {
+    // stop timer and get score
+    double levelScore  = [self.timeEngine stop];
+    BOOL isSuccess = NO;
+    
     switch ([[answer objectForKey:@"levelType"]integerValue])
     {
-        case OOEngineLevelTypeMatch:
-            [self.delegate OOEngine:self levelSuccess:self.score];
-            break;
-            
         case OOEngineLevelTypeColor:
             if ([[answer objectForKey:@"levelColor"]integerValue] == response)
-                 [self.delegate OOEngine:self levelSuccess:self.score];
+                isSuccess = YES;
             else
-                 [self.delegate OOEngine:self levelFaill:self.score];
+                isSuccess = NO;
             break;
 
         case OOEngineLevelTypeText:
             if ([[answer objectForKey:@"levelText"]integerValue] == response)
-                [self.delegate OOEngine:self levelSuccess:self.score];
+                isSuccess = YES;
             else
-                [self.delegate OOEngine:self levelFaill:self.score];
+                isSuccess = NO;
             break;
 
         default:
-            [self.delegate OOEngine:self levelFaill:self.score];
+            isSuccess = NO;
             break;
     }
+    
+    if (isSuccess)
+    {
+        self.score += levelScore;
+        [self.delegate OOEngine:self levelSuccess:self.score];
+    }
+    else
+    {
+        [self.delegate OOEngine:self gameOver:self.score];
+    }
+}
+
+#pragma mark - OOTimeEngine Delegate
+
+// ----------------------------------------------------------------------------------------------
+// Time runing out (timer already stoped)
+// ----------------------------------------------------------------------------------------------
+- (void)OOTimeEngineTimeEnd:(OOTimeEngine *)timeEngine
+{
+    [self.delegate OOEngine:self gameOver:self.score];
 }
 
 
@@ -125,7 +149,7 @@
 // ----------------------------------------------------------------------------------------------
 - (OOEngineLevelType)generateLevelType
 {
-    OOEngineLevelType Type = arc4random() % 2;
+    OOEngineLevelType Type = arc4random() % totalGameMode;
     return Type;
 }
 

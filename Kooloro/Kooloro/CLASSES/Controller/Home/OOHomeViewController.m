@@ -71,7 +71,7 @@
     // TEXT
     [self.gamePlayButton setTitle:NSLocalizedString(@"GENERICS_play", @"") forState:UIControlStateNormal];
     [self.gameShareButton setTitle:NSLocalizedString(@"GENERICS_share", @"") forState:UIControlStateNormal];
-    [self.gameScoreButton setTitle:NSLocalizedString(@"GENERICS_score", @"") forState:UIControlStateNormal];
+    [self.gameScoreButton setTitle:NSLocalizedString(@"GENERICS_rank", @"") forState:UIControlStateNormal];
     [self.gameTutoButton setTitle:NSLocalizedString(@"GENERICS_tuto", @"") forState:UIControlStateNormal];
     
     // CORNER + BORDER

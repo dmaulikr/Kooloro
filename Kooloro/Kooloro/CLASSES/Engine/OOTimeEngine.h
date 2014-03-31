@@ -8,23 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@class HMTimeBar;
+@class OOTimeEngine;
 
-@protocol HMTimeBarProtocol <NSObject>
+@protocol OOTimeEngineProtocol <NSObject>
 
-- (void)HMProgressBarTimeEnd:(HMTimeBar *)timeBar;
-- (void)HMProgressBarStoped:(HMTimeBar *)timeBar score:(double)score;
+- (void)OOTimeEngineTimeEnd:(OOTimeEngine *)timeEngine;
 
 @end
 
-@interface HMTimeBar : UIView
+@interface OOTimeEngine : UIView
 
 #pragma mark - Constructor
 - (id) initWithFrame:(CGRect)frame andDuration:(CGFloat)duration;
 
 #pragma  mark - Manage Animation
 - (void) start;
-- (void) stop;
+- (double) stop;
 
 #pragma  mark - Setter
 @property (nonatomic, setter = setCorner:) BOOL isCorner;
@@ -33,6 +32,6 @@
 @property (nonatomic, strong, setter = setViewColor:) UIColor* viewColor;
 
 #pragma mark - Delegate
-@property (nonatomic, weak) id<HMTimeBarProtocol> delegate;
+@property (nonatomic, weak) id<OOTimeEngineProtocol> delegate;
 
 @end

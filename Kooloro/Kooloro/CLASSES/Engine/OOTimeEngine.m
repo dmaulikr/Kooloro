@@ -4,10 +4,10 @@
 //  Created by hugo mazet on 07/03/2014.
 //
 
-#import "HMTimeBar.h"
+#import "OOTimeEngine.h"
 
 #pragma mark - Class Extention
-@interface HMTimeBar ()
+@interface OOTimeEngine ()
 
 
 @property (nonatomic, strong) UIView *progressBar;
@@ -17,8 +17,11 @@
 @end
 
 #pragma mark - Class Implementation
-@implementation HMTimeBar
+@implementation OOTimeEngine
 
+// ----------------------------------------------------------------------------------------------
+// Init
+// ----------------------------------------------------------------------------------------------
 - (id) initWithFrame:(CGRect)frame andDuration:(CGFloat)duration
 {
     self = [super initWithFrame:frame];
@@ -39,6 +42,9 @@
     return self;
 }
 
+// ----------------------------------------------------------------------------------------------
+// Corner
+// ----------------------------------------------------------------------------------------------
 - (void) setCorner:(BOOL)isCorner
 {
     if (isCorner)
@@ -47,44 +53,48 @@
         [self.layer setCornerRadius:0];
 }
 
+// ----------------------------------------------------------------------------------------------
+// Back Color
+// ----------------------------------------------------------------------------------------------
 - (void) setViewColor:(UIColor *)viewColor
 {
     [self setBackgroundColor:viewColor];
 }
 
+// ----------------------------------------------------------------------------------------------
+// Bar Color
+// ----------------------------------------------------------------------------------------------
 - (void) setBarColor:(UIColor *)barColor
 {
     [self.progressBar setBackgroundColor:barColor];
 }
 
 #pragma  mark - Manage Animation
+// ----------------------------------------------------------------------------------------------
+// START
+// ----------------------------------------------------------------------------------------------
 - (void) start
 {
-    [self stop];
-    
+    // timer
+    self.tickCount = 0;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loop:) userInfo:nil repeats:YES];
 
     // animation
     CABasicAnimation *animation;
-    
     animation=[CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     animation.delegate = self;
     animation.fillMode = kCAFillModeForwards;
     animation.removedOnCompletion = NO;
-    
     animation.duration = self.duration;
     animation.fromValue = [NSNumber numberWithFloat:0];
     animation.toValue = [NSNumber numberWithFloat:self.progressBar.frame.size.width];
-    
     [self.progressBar.layer addAnimation:animation forKey:@"animateLayer"];
 }
 
-- (void)loop:(NSTimer*)timer
-{
-    self.tickCount ++;
-}
-
-- (void) stop
+// ----------------------------------------------------------------------------------------------
+// STOP
+// ----------------------------------------------------------------------------------------------
+- (double)stop
 {
     if (self.timer)
     {
@@ -92,22 +102,33 @@
         self.timer = nil;
     }
     [self.progressBar.layer removeAllAnimations];
+    
+    double score =  self.duration - self.tickCount;
+    return score;
 }
 
+// ----------------------------------------------------------------------------------------------
+// LOOP
+// ----------------------------------------------------------------------------------------------
+- (void)loop:(NSTimer*)timer
+{
+    self.tickCount ++;
+}
+
+// ----------------------------------------------------------------------------------------------
+// Animation did stop
+// ----------------------------------------------------------------------------------------------
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
     if (flag)
     {
-        [self.delegate HMProgressBarTimeEnd:self];
+        if (self.timer)
+        {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        [self.delegate OOTimeEngineTimeEnd:self];
     }
-    else
-    {
-        [self.delegate HMProgressBarStoped:self score:self.duration - self.tickCount];
-        
-    }
-    
-    self.tickCount = 0;
-    
 }
 
 @end
