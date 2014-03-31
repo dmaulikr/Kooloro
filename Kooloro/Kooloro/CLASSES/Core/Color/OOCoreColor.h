@@ -23,10 +23,10 @@
 
 // COLOR
 +(UIColor*)redTile;
-+(UIColor*)yellowTile;
 +(UIColor*)greenTile;
 +(UIColor*)blueTile;
-+(UIColor*)pinkTile;
++(UIColor*)yellowTile;
 +(UIColor*)purpleTile;
+
 
 @end

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OOEngine.h"
 
-@interface OOGameOnViewController : UIViewController
+@interface OOGameOnViewController : UIViewController <OOEngineProtocol>
+
+@property (weak, nonatomic) IBOutlet UILabel *targetLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *I;
+@property (weak, nonatomic) IBOutlet UIButton *II;
+@property (weak, nonatomic) IBOutlet UIButton *III;
+@property (weak, nonatomic) IBOutlet UIButton *IV;
 
 @end

@@ -11,10 +11,15 @@
 // GENERICS
 // ----------------------------------------------------------------------------------------------
 
-// BUTTON
-"GENERICS_play" = "translate";
-"GENERICS_share" = "translate";
-"GENERICS_score" = "translate";
-"GENERICS_tuto" = "translate";
+// GENERIC
+"GENERICS_play" = "start";
+"GENERICS_share" = "share";
+"GENERICS_score" = "game center";
+"GENERICS_tuto" = "how to";
 
-
+// COLOR
+"COLOR_red" = "red";
+"COLOR_green" = "green";
+"COLOR_blue" = "blue";
+"COLOR_yellow" = "yellow";
+"COLOR_purple" = "purple";

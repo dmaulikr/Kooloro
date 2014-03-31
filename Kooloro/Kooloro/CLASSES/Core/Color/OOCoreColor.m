@@ -65,11 +65,6 @@
     return [UIColor redColor];
 }
 
-+(UIColor*)yellowTile
-{
-   return [UIColor yellowColor];
-}
-
 +(UIColor*)greenTile
 {
     return [UIColor greenColor];
@@ -80,9 +75,9 @@
     return [UIColor blueColor];
 }
 
-+(UIColor*)pinkTile
++(UIColor*)yellowTile
 {
-    return [UIColor magentaColor];
+   return [UIColor yellowColor];
 }
 
 +(UIColor*)purpleTile

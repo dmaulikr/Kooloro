@@ -10,6 +10,8 @@
 
 @interface OOGameOnViewController ()
 
+@property (nonatomic, strong) OOEngine *gameEngine;
+
 @end
 
 @implementation OOGameOnViewController
@@ -18,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,24 +27,83 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.I.backgroundColor =
+    self.II.backgroundColor =
+    self.III.backgroundColor =
+    self.IV.backgroundColor = [UIColor clearColor];
+    
+    self.gameEngine  = [[OOEngine alloc]init];
+    [self.gameEngine setDelegate:self];
+    
+    [self.gameEngine startGame];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - IBAction
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)buttonGotPressed:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIButton *button = sender;
+    
+    switch (button.tag)
+    {
+        case 1:
+            
+            break;
+            
+        case 2:
+           
+            break;
+            
+        case 3:
+            
+            break;
+            
+        case 4:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
-*/
+
+
+#pragma mark - OOEngine
+
+#pragma mark - OOEngine Delegate
+
+- (void)OOEngine:(OOEngine*)engine levelOpen:(NSDictionary*)level
+{
+    [self.targetLabel setTextColor:[level objectForKey:@"targetColor"]];
+    [self.targetLabel setText:[level objectForKey:@"targetText"]];
+    
+    [self.I setBackgroundColor:[[level objectForKey:@"possibleResponse"] objectAtIndex:0]];
+    [self.II setBackgroundColor:[[level objectForKey:@"possibleResponse"] objectAtIndex:1]];
+    [self.III setBackgroundColor:[[level objectForKey:@"possibleResponse"] objectAtIndex:2]];
+    [self.IV setBackgroundColor:[[level objectForKey:@"possibleResponse"] objectAtIndex:3]];
+}
+
+- (void)OOEngine:(OOEngine*)engine levelSuccess:(double)score
+{
+}
+
+- (void)OOEngine:(OOEngine*)engine levelFaill:(double)score
+{
+    
+}
 
 @end
+
+
+
+
+
+
+
+

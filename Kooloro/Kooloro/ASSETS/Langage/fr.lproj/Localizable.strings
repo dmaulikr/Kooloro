@@ -11,12 +11,18 @@
 // GENERICS
 // ----------------------------------------------------------------------------------------------
 
-// BUTTON
+// GENERIC
 "GENERICS_play" = "jouer";
 "GENERICS_share" = "partager";
 "GENERICS_score" = "score";
 "GENERICS_tuto" = "notice";
 
+// COLOR
+"COLOR_red" = "rouge";
+"COLOR_green" = "vert";
+"COLOR_blue" = "bleu";
+"COLOR_yellow" = "jaune";
+"COLOR_purple" = "viollet";
 
 
 
