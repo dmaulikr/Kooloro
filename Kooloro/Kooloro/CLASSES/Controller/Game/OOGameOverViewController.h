@@ -10,4 +10,9 @@
 
 @interface OOGameOverViewController : UIViewController
 
+@property (strong, nonatomic) NSString *score;
+@property (weak, nonatomic) IBOutlet UILabel *gameOverTitle;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yourScoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 @end

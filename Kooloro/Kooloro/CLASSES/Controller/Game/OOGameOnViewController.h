@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "OOEngine.h"
+#import "HMTimeBar.h"
 
-@interface OOGameOnViewController : UIViewController <OOEngineProtocol>
+@interface OOGameOnViewController : UIViewController <OOEngineProtocol, HMTimeBarProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *levelTypeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *levelTypeImageView;
 @property (weak, nonatomic) IBOutlet UIButton *I;
 @property (weak, nonatomic) IBOutlet UIButton *II;
 @property (weak, nonatomic) IBOutlet UIButton *III;

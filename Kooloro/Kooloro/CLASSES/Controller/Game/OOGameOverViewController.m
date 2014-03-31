@@ -8,42 +8,77 @@
 
 #import "OOGameOverViewController.h"
 
+//*********************************************************************************
+//*********************************************************************************
+//*********************************************************************************
+
+#pragma mark -
+#pragma mark CLASS EXTENSION
+#pragma mark -
+
 @interface OOGameOverViewController ()
 
 @end
 
+//*********************************************************************************
+//*********************************************************************************
+//*********************************************************************************
+
+#pragma mark -
+#pragma mark CLASS IMPLEMENTATION
+#pragma mark -
+
 @implementation OOGameOverViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+// ----------------------------------------------------------------------------------------------
+// View did load
+// ----------------------------------------------------------------------------------------------
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
+    
+    [self.scoreLabel setText:self.score];
 }
 
+// ----------------------------------------------------------------------------------------------
+// Setup UI
+// ----------------------------------------------------------------------------------------------
+- (void)setupUI
+{
+    // BACK COLOR
+    [self.view setBackgroundColor:[OOCoreColor whiteBack]];
+    [self.playButton setBackgroundColor:[OOCoreColor redBack]];
+    
+    // TEXT COLOR
+    [self.gameOverTitle setTextColor:[OOCoreColor redText]];
+    [self.yourScoreLabel setTextColor:[OOCoreColor lightBlackText]];
+    [self.scoreLabel setTextColor:[OOCoreColor blackText]];
+    [self.playButton setTitleColor:[OOCoreColor whiteText] forState:UIControlStateNormal];
+    
+    // TEXT FONT
+    [self.gameOverTitle setFont:[OOCoreFont GetFontBig]];
+    [self.yourScoreLabel setFont:[OOCoreFont GetFontMedium]];
+    [self.scoreLabel setFont:[OOCoreFont GetFontBigBold]];
+    [self.playButton.titleLabel setFont:[OOCoreFont GetFontMedium]];
+    
+    // CORER
+    [self.playButton.layer setCornerRadius:OOMagicalNumber];
+}
+
+
+// ----------------------------------------------------------------------------------------------
+// Memory warning
+// ----------------------------------------------------------------------------------------------
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)playGotPressed:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 @end

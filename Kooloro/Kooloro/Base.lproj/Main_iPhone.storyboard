@@ -120,6 +120,58 @@
             </objects>
             <point key="canvasLocation" x="506" y="402"/>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="TWu-v9-teo">
+            <objects>
+                <viewController storyboardIdentifier="GameOver" id="zMh-Yj-jaw" customClass="OOGameOverViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="enm-11-QfS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWp-Ix-AMg">
+                                <rect key="frame" x="20" y="277" width="280" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="game over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KqX-xy-kx7">
+                                <rect key="frame" x="20" y="121" width="280" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gmP-Bn-09L">
+                                <rect key="frame" x="20" y="247" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mwp-Mh-Ebb">
+                                <rect key="frame" x="120" y="412" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playGotPressed:" destination="zMh-Yj-jaw" eventType="touchUpInside" id="rAY-Cn-d0W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FqS-FW-Bbq"/>
+                    <connections>
+                        <outlet property="gameOverTitle" destination="KqX-xy-kx7" id="gBy-io-mKo"/>
+                        <outlet property="playButton" destination="Mwp-Mh-Ebb" id="TUE-KU-VWi"/>
+                        <outlet property="scoreLabel" destination="tWp-Ix-AMg" id="pS6-6M-vil"/>
+                        <outlet property="yourScoreLabel" destination="gmP-Bn-09L" id="oYm-D8-KJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzg-SC-Sp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-326"/>
+        </scene>
         <!--Game On View Controller-->
         <scene sceneID="9Rx-nX-GaI">
             <objects>
@@ -129,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="targeted color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y6e-uG-dZS">
-                                <rect key="frame" x="20" y="153" width="280" height="80"/>
+                                <rect key="frame" x="20" y="170" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -179,11 +231,14 @@
                                     <action selector="buttonGotPressed:" destination="C5V-6M-FMp" eventType="touchUpInside" id="Ofi-M6-q1L"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BZV-Cf-ObU">
-                                <rect key="frame" x="95" y="392" width="131" height="21"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pLN-yr-XTQ">
+                                <rect key="frame" x="120" y="333" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EbB-pb-25d">
+                                <rect key="frame" x="20" y="82" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -194,8 +249,10 @@
                         <outlet property="II" destination="jFG-Vh-o6d" id="aTk-cD-DCc"/>
                         <outlet property="III" destination="j3O-P5-3zq" id="2HZ-1D-eiZ"/>
                         <outlet property="IV" destination="MYF-qx-SaC" id="Gvg-Fp-AhC"/>
-                        <outlet property="levelTypeLabel" destination="BZV-Cf-ObU" id="CVk-9M-ahO"/>
+                        <outlet property="levelTypeImageView" destination="pLN-yr-XTQ" id="HGI-nv-Lly"/>
+                        <outlet property="scoreLabel" destination="EbB-pb-25d" id="bxb-HK-BzR"/>
                         <outlet property="targetLabel" destination="Y6e-uG-dZS" id="1hH-NB-Sw3"/>
+                        <segue destination="zMh-Yj-jaw" kind="push" identifier="SegueGameOver" id="vcL-DM-ew5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agu-A5-Eft" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -26,27 +26,27 @@
 }
 +(UIFont*)GetFontSmallBold
 {
-    return [UIFont fontWithName:FONT_NAME_Bold size:12];
+    return [UIFont fontWithName:FONT_NAME_Bold size:20];
 }
 
 // MEDIUM
 +(UIFont*)GetFontMedium
 {
-    return [UIFont fontWithName:FONT_NAME size:20];
+    return [UIFont fontWithName:FONT_NAME size:25];
 }
 +(UIFont*)GetFontMediumBold
 {
-    return [UIFont fontWithName:FONT_NAME_Bold size:20];
+    return [UIFont fontWithName:FONT_NAME_Bold size:25];
 }
 
 // BIG
 +(UIFont*)GetFontBig
 {
-    return [UIFont fontWithName:FONT_NAME size:30];
+    return [UIFont fontWithName:FONT_NAME size:45];
 }
 +(UIFont*)GetFontBigBold
 {
-    return [UIFont fontWithName:FONT_NAME_Bold size:30];
+    return [UIFont fontWithName:FONT_NAME_Bold size:50];
 }
 
 

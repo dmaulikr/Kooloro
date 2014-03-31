@@ -55,6 +55,14 @@
 }
 
 // ----------------------------------------------------------------------------------------------
+// Stop Game
+// ----------------------------------------------------------------------------------------------
+- (void)stopGame
+{
+    [self.delegate OOEngine:self levelFaill:self.score];
+}
+
+// ----------------------------------------------------------------------------------------------
 // Open Level
 // ----------------------------------------------------------------------------------------------
 - (void)openLevel
@@ -77,7 +85,6 @@
                       nil];
     
     [self.delegate OOEngine:self levelOpen:answer];
-    
 }
 
 // ----------------------------------------------------------------------------------------------
@@ -88,25 +95,25 @@
     switch ([[answer objectForKey:@"levelType"]integerValue])
     {
         case OOEngineLevelTypeMatch:
-            [self.delegate OOEngine:self levelSuccess:0];
+            [self.delegate OOEngine:self levelSuccess:self.score];
             break;
             
         case OOEngineLevelTypeColor:
             if ([[answer objectForKey:@"levelColor"]integerValue] == response)
-                 [self.delegate OOEngine:self levelSuccess:0];
+                 [self.delegate OOEngine:self levelSuccess:self.score];
             else
-                 [self.delegate OOEngine:self levelFaill:0];
+                 [self.delegate OOEngine:self levelFaill:self.score];
             break;
 
         case OOEngineLevelTypeText:
             if ([[answer objectForKey:@"levelText"]integerValue] == response)
-                [self.delegate OOEngine:self levelSuccess:0];
+                [self.delegate OOEngine:self levelSuccess:self.score];
             else
-                [self.delegate OOEngine:self levelFaill:0];
+                [self.delegate OOEngine:self levelFaill:self.score];
             break;
 
         default:
-            [self.delegate OOEngine:self levelFaill:0];
+            [self.delegate OOEngine:self levelFaill:self.score];
             break;
     }
 }

@@ -37,6 +37,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, weak) id<OOEngineProtocol> delegate;
 
 - (void)startGame;
+- (void)stopGame;
 - (void)openLevel;
 - (void)correct:(OOEngineColor)response forAnswer:(NSDictionary*)answer;
 
