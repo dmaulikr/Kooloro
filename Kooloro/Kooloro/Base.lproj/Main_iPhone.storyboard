@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kooloro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMA-1T-jKd">
-                                <rect key="frame" x="20" y="110" width="280" height="60"/>
+                                <rect key="frame" x="20" y="78" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hsZ-sA-2vP">
-                                <rect key="frame" x="85" y="209" width="150" height="150"/>
+                                <rect key="frame" x="85" y="178" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="PLAY">
@@ -76,11 +76,19 @@
                                     <segue destination="5pQ-m3-Jtc" kind="push" id="tyO-uk-s0U"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="best score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAF-N1-GL8">
+                                <rect key="frame" x="20" y="365" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="R2x-6C-2bc"/>
                     <connections>
+                        <outlet property="bestScoreLabel" destination="TAF-N1-GL8" id="Tdg-aB-hoD"/>
                         <outlet property="gamePlayButton" destination="hsZ-sA-2vP" id="WuF-Xm-Um7"/>
                         <outlet property="gameScoreButton" destination="LVi-c9-Zag" id="vxZ-fX-5d1"/>
                         <outlet property="gameShareButton" destination="SFx-EY-twl" id="nJK-zY-BaY"/>
@@ -242,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mwp-Mh-Ebb">
-                                <rect key="frame" x="178" y="412" width="80" height="40"/>
+                                <rect key="frame" x="180" y="500" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,7 +260,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fkS-LR-KFA">
-                                <rect key="frame" x="70" y="412" width="80" height="40"/>
+                                <rect key="frame" x="70" y="500" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" title="menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,11 +269,18 @@
                                     <action selector="homeGotPressed:" destination="zMh-Yj-jaw" eventType="touchUpInside" id="2wm-N7-aco"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nouveau meilleur score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f1u-5b-n6j">
+                                <rect key="frame" x="20" y="365" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FqS-FW-Bbq"/>
                     <connections>
+                        <outlet property="bestScoreLabel" destination="f1u-5b-n6j" id="4da-Gh-vN2"/>
                         <outlet property="gameOverTitle" destination="KqX-xy-kx7" id="gBy-io-mKo"/>
                         <outlet property="homeButton" destination="fkS-LR-KFA" id="qS2-B8-6r9"/>
                         <outlet property="playButton" destination="Mwp-Mh-Ebb" id="TUE-KU-VWi"/>

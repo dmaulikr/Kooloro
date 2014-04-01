@@ -56,6 +56,7 @@
     
     // TEXT COLOR
     [self.gameTitleLabel setTextColor:[OOCoreColor blackText]];
+    [self.bestScoreLabel setTextColor:[OOCoreColor lightBlackText]];
     [self.gamePlayButton setTitleColor:[OOCoreColor whiteText] forState:UIControlStateNormal];
     [self.gameShareButton setTitleColor:[OOCoreColor lightBlackText] forState:UIControlStateNormal];
     [self.gameScoreButton setTitleColor:[OOCoreColor lightBlackText] forState:UIControlStateNormal];
@@ -63,6 +64,7 @@
     
     // TEXT FONT
     [self.gameTitleLabel setFont:[OOCoreFont GetFontMedium]];
+    [self.bestScoreLabel setFont:[OOCoreFont GetFontMedium]];
     [self.gamePlayButton.titleLabel setFont:[OOCoreFont GetFontBig]];
     [self.gameShareButton.titleLabel setFont:[OOCoreFont GetFontSmall]];
     [self.gameScoreButton.titleLabel setFont:[OOCoreFont GetFontSmall]];
@@ -74,9 +76,22 @@
     [self.gameScoreButton setTitle:NSLocalizedString(@"GENERICS_rank", @"") forState:UIControlStateNormal];
     [self.gameTutoButton setTitle:NSLocalizedString(@"GENERICS_tuto", @"") forState:UIControlStateNormal];
     
+    
     // CORNER + BORDER
     [self.gamePlayButton.layer setCornerRadius:75];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // BEST SCORE
+    NSString *best = [STKeychain getPasswordForUsername:OOBestScoreKey andServiceName:OOApplicationBundleIdentifier error:nil];
+    if (!best)
+        best = @"0";
+    [self.bestScoreLabel setText:[NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"GENERICS_best", @"best"),best]];
+
 }
 
 // ----------------------------------------------------------------------------------------------

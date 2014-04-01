@@ -28,6 +28,7 @@
 #endif
 
 
+#define OOBestScoreKey                      @"bestSoceKey"
 #define OOMagicalNumber                     10
 #define OOCornerRadius                      5
 

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameOverTitle;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yourScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bestScoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeButton;
 

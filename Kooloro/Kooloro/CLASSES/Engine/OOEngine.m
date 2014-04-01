@@ -10,7 +10,7 @@
 
 #define totalColor              7
 #define totalGameMode           2
-#define timeEngineDuration      30
+#define timeEngineDuration      5
 
 //*********************************************************************************
 //*********************************************************************************

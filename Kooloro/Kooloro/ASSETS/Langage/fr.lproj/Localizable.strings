@@ -18,6 +18,8 @@
 "GENERICS_tuto" = "notice";
 "GENERICS_menu" = "menu";
 "GENERICS_score" = "votre score";
+"GENERICS_best" = "meilleur score";
+"GENERICS_newBest" = "nouveau meilleur score";
 
 
 // COLOR

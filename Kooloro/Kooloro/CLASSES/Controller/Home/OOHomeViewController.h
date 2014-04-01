@@ -10,6 +10,7 @@
 
 @interface OOHomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *gameTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bestScoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *gamePlayButton;
 @property (weak, nonatomic) IBOutlet UIButton *gameShareButton;
 @property (weak, nonatomic) IBOutlet UIButton *gameScoreButton;

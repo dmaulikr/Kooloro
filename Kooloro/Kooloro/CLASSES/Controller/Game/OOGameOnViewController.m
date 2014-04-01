@@ -59,7 +59,7 @@
     [self.view addSubview:self.gameEngine.timeEngine];
     
     // score counter
-    self.scoreCounter = [[KIRollingCounter alloc]initWithFrame:CGRectMake(20, 80, 250, 55) andStartValue:[NSNumber numberWithInt:0]];
+    self.scoreCounter = [[KIRollingCounter alloc]initWithFrame:CGRectMake(20, 80, 280, 55) andStartValue:[NSNumber numberWithInt:0]];
     [self.view addSubview:self.scoreCounter];
     
     // button tag

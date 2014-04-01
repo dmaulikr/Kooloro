@@ -22,6 +22,7 @@
 		2F04167D18E8A77A0083CD1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F04167B18E8A77A0083CD1E /* InfoPlist.strings */; };
 		2F04167F18E8A77A0083CD1E /* KooloroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F04167E18E8A77A0083CD1E /* KooloroTests.m */; };
 		2F31442218EAB1DF00B62B65 /* KIRollingCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31442118EAB1DF00B62B65 /* KIRollingCounter.m */; };
+		2F31442618EABC7600B62B65 /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F31442518EABC7600B62B65 /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2F35B45318EA03DE006E1E5D /* color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45118EA03DE006E1E5D /* color@2x.png */; };
 		2F35B45418EA03DE006E1E5D /* text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45218EA03DE006E1E5D /* text@2x.png */; };
 		2F35B45A18EA06DE006E1E5D /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F35B45918EA06DE006E1E5D /* color.png */; };
@@ -71,6 +72,8 @@
 		2F04167E18E8A77A0083CD1E /* KooloroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KooloroTests.m; sourceTree = "<group>"; };
 		2F31442018EAB1DF00B62B65 /* KIRollingCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIRollingCounter.h; sourceTree = "<group>"; };
 		2F31442118EAB1DF00B62B65 /* KIRollingCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIRollingCounter.m; sourceTree = "<group>"; };
+		2F31442418EABC7600B62B65 /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
+		2F31442518EABC7600B62B65 /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		2F35B45118EA03DE006E1E5D /* color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color@2x.png"; sourceTree = "<group>"; };
 		2F35B45218EA03DE006E1E5D /* text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text@2x.png"; sourceTree = "<group>"; };
 		2F35B45918EA06DE006E1E5D /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 		2F31441E18EAB1DF00B62B65 /* LIBRARY */ = {
 			isa = PBXGroup;
 			children = (
+				2F31442318EABC7600B62B65 /* STKeychain */,
 				2F31441F18EAB1DF00B62B65 /* KIRollingCounter */,
 			);
 			path = LIBRARY;
@@ -333,6 +337,15 @@
 				2F31442118EAB1DF00B62B65 /* KIRollingCounter.m */,
 			);
 			path = KIRollingCounter;
+			sourceTree = "<group>";
+		};
+		2F31442318EABC7600B62B65 /* STKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				2F31442418EABC7600B62B65 /* STKeychain.h */,
+				2F31442518EABC7600B62B65 /* STKeychain.m */,
+			);
+			path = STKeychain;
 			sourceTree = "<group>";
 		};
 		2F3899AC18E9AD6A00671C4C /* Images */ = {
@@ -517,6 +530,7 @@
 				2F4CB88F18E94F5A007DCEBC /* OOShareViewController.m in Sources */,
 				2F4CB89218E94F62007DCEBC /* OOTutoViewController.m in Sources */,
 				2F4CB88918E94F4C007DCEBC /* OOGameOnViewController.m in Sources */,
+				2F31442618EABC7600B62B65 /* STKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
