@@ -113,8 +113,102 @@
                     <view key="view" contentMode="scaleToFill" id="CdF-Dr-4Ke">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="1U8-J1-fY3">
+                                <rect key="frame" x="20" y="62" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="23r-dR-hLa">
+                                <rect key="frame" x="120" y="62" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="1oB-e1-gYi">
+                                <rect key="frame" x="220" y="62" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="tfH-GG-Coy">
+                                <rect key="frame" x="20" y="163" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="bDw-Hv-Gy0">
+                                <rect key="frame" x="120" y="163" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="ta4-dz-IQo">
+                                <rect key="frame" x="220" y="163" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="EcD-bn-9Kp">
+                                <rect key="frame" x="20" y="261" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Uba-9j-wTf">
+                                <rect key="frame" x="120" y="261" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="lWZ-gI-ERX">
+                                <rect key="frame" x="220" y="261" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="X4J-NA-2SW">
+                                <rect key="frame" x="120" y="357" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="wlA-uy-fmQ">
+                                <rect key="frame" x="220" y="357" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="YLF-Y8-0gd">
+                                <rect key="frame" x="20" y="453" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="KzK-cl-aOf">
+                                <rect key="frame" x="120" y="453" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="fX1-G6-fs7">
+                                <rect key="frame" x="220" y="453" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="iFc-b6-mjK">
+                                <rect key="frame" x="20" y="357" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="view1" destination="1U8-J1-fY3" id="CC1-t7-ocB"/>
+                        <outlet property="view10" destination="iFc-b6-mjK" id="T0V-3E-Ydd"/>
+                        <outlet property="view11" destination="X4J-NA-2SW" id="MZA-ft-pBW"/>
+                        <outlet property="view12" destination="wlA-uy-fmQ" id="iOl-ME-yCT"/>
+                        <outlet property="view13" destination="YLF-Y8-0gd" id="qgS-xc-PUY"/>
+                        <outlet property="view14" destination="KzK-cl-aOf" id="LHH-Gj-tJj"/>
+                        <outlet property="view15" destination="fX1-G6-fs7" id="pFc-od-AZk"/>
+                        <outlet property="view2" destination="23r-dR-hLa" id="eh0-4U-CSa"/>
+                        <outlet property="view3" destination="1oB-e1-gYi" id="Ilk-d8-BvT"/>
+                        <outlet property="view4" destination="tfH-GG-Coy" id="PjK-Tl-O0a"/>
+                        <outlet property="view5" destination="bDw-Hv-Gy0" id="JYa-5W-T1j"/>
+                        <outlet property="view6" destination="ta4-dz-IQo" id="mi8-Gu-kqM"/>
+                        <outlet property="view7" destination="EcD-bn-9Kp" id="YeJ-Te-3zm"/>
+                        <outlet property="view8" destination="Uba-9j-wTf" id="Fpi-ne-0kb"/>
+                        <outlet property="view9" destination="lWZ-gI-ERX" id="ugH-XL-IBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Rc-9F-0vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,12 +340,6 @@
                                 <rect key="frame" x="120" y="333" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EbB-pb-25d">
-                                <rect key="frame" x="20" y="82" width="280" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -261,7 +349,6 @@
                         <outlet property="III" destination="j3O-P5-3zq" id="2HZ-1D-eiZ"/>
                         <outlet property="IV" destination="MYF-qx-SaC" id="Gvg-Fp-AhC"/>
                         <outlet property="levelTypeImageView" destination="pLN-yr-XTQ" id="HGI-nv-Lly"/>
-                        <outlet property="scoreLabel" destination="EbB-pb-25d" id="bxb-HK-BzR"/>
                         <outlet property="targetLabel" destination="Y6e-uG-dZS" id="1hH-NB-Sw3"/>
                         <segue destination="zMh-Yj-jaw" kind="push" identifier="SegueGameOver" id="vcL-DM-ew5"/>
                     </connections>

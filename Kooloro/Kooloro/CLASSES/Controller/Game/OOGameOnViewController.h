@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "OOEngine.h"
+#import "KIRollingCounter.h"
 
 @interface OOGameOnViewController : UIViewController <OOEngineProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) KIRollingCounter *scoreCounter;
 
 @property (weak, nonatomic) IBOutlet UIImageView *levelTypeImageView;
 @property (weak, nonatomic) IBOutlet UIButton *I;

@@ -27,6 +27,8 @@
 +(UIColor*)blueTile;
 +(UIColor*)yellowTile;
 +(UIColor*)purpleTile;
++(UIColor*)pinkTile;
++(UIColor*)orangeTile;
 
 
 @end

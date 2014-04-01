@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view setBackgroundColor:[OOCoreColor whiteBack]];
+    
+    [self.view1 setBackgroundColor:[OOCoreColor redTile]];
+    [self.view2 setBackgroundColor:[OOCoreColor blueTile]];
+    [self.view3 setBackgroundColor:[OOCoreColor greenTile]];
+    [self.view4 setBackgroundColor:[OOCoreColor yellowTile]];
+    [self.view5 setBackgroundColor:[OOCoreColor purpleTile]];
+    [self.view6 setBackgroundColor:[OOCoreColor pinkTile]];
+    [self.view7 setBackgroundColor:[OOCoreColor orangeTile]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -58,6 +58,10 @@
     [self.gameEngine.timeEngine setCenter:self.view.center];
     [self.view addSubview:self.gameEngine.timeEngine];
     
+    // score counter
+    self.scoreCounter = [[KIRollingCounter alloc]initWithFrame:CGRectMake(20, 80, 250, 55) andStartValue:[NSNumber numberWithInt:0]];
+    [self.view addSubview:self.scoreCounter];
+    
     // button tag
     [self.I setTag:0];
     [self.II setTag:1];
@@ -82,14 +86,13 @@
     self.IV.backgroundColor = [UIColor clearColor];
     
     // TEXT COLOR
-    [self.scoreLabel setTextColor:[OOCoreColor blackText]];
+    [self.scoreCounter setCounterColor:[OOCoreColor blackText]];
     
     // TEXT FONT
-    [self.scoreLabel setFont:[OOCoreFont GetFontBig]];
+    [self.scoreCounter setCounterFont:[OOCoreFont GetFontBig]];
     [self.targetLabel setFont:[OOCoreFont GetFontBigBold]];
     
     // DEFAULT TEXT
-    [self.scoreLabel setText:@"0"];
     [self.targetLabel setText:@""];
     
     // CORNER + BORDER
@@ -109,7 +112,7 @@
     [super viewWillAppear:animated];
     
     // START GAME
-    [self.scoreLabel setText:@"0"];
+    [self.scoreCounter setCounterValue:[NSNumber numberWithInt:0]];
     [self.gameEngine startGame];
 }
 
@@ -174,8 +177,7 @@
 // ----------------------------------------------------------------------------------------------
 - (void)OOEngine:(OOEngine*)engine levelSuccess:(double)score
 {
-    [self.scoreLabel setText:[NSString stringWithFormat:@"%.0f",score]];
-    // load next level
+    [self.scoreCounter setCounterValueAnimated:[NSNumber numberWithDouble:score]];
     [self.gameEngine openLevel];
 }
 
@@ -184,7 +186,7 @@
 // ----------------------------------------------------------------------------------------------
 - (void)OOEngine:(OOEngine*)engine gameOver:(double)score;
 {
-    [self.scoreLabel setText:[NSString stringWithFormat:@"%.0f",score]];
+    [self.scoreCounter setCounterValue:[NSNumber numberWithDouble:score]];
     [self performSegueWithIdentifier:@"SegueGameOver" sender:self];
 }
 
@@ -199,7 +201,7 @@
     if ([[segue identifier] isEqualToString:@"SegueGameOver"])
     {
         OOGameOverViewController *controller = segue.destinationViewController;
-        controller.score = self.scoreLabel.text;
+        controller.score = [NSString stringWithFormat:@"%@",[self.scoreCounter getCounterValue]];
     }
 }
 

@@ -67,7 +67,7 @@
 
 +(UIColor*)greenTile
 {
-    return [UIColor colorWithRed:168.0/255.0 green:219.0/255.0 blue:168.0/255.0 alpha:1.0];
+    return [UIColor colorWithRed:144.0/255.0 green:205.0/255.0 blue:156.0/255.0 alpha:1.0];
 }
 
 +(UIColor*)blueTile
@@ -77,12 +77,22 @@
 
 +(UIColor*)yellowTile
 {
-   return [UIColor colorWithRed:248.0/255.0 green:202.0/255.0 blue:0 alpha:1.0];
+   return [UIColor colorWithRed:255.0/255.0 green:225.0/255.0 blue:129.0/255.0 alpha:1.0];
 }
 
 +(UIColor*)purpleTile
 {
-    return [UIColor colorWithRed:140.0/255.0 green:91.0/255.0 blue:123.0/255.0 alpha:1.0];
+    return [UIColor colorWithRed:227.0/255.0 green:170.0/255.0 blue:214.0/255.0 alpha:1.0];
+}
+
++(UIColor*)pinkTile
+{
+    return [UIColor colorWithRed:255.0/255.0 green:189.0/255.0 blue:216.0/255.0 alpha:1.0];
+}
+
++(UIColor*)orangeTile
+{
+    return [UIColor colorWithRed:255.0/255.0 green:196.0/255.0 blue:140.0/255.0 alpha:1.0];
 }
 
 

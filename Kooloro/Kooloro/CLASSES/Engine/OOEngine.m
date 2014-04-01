@@ -8,9 +8,9 @@
 
 #import "OOEngine.h"
 
-#define totalColor              5
+#define totalColor              7
 #define totalGameMode           2
-#define timeEngineDuration      5
+#define timeEngineDuration      30
 
 //*********************************************************************************
 //*********************************************************************************
@@ -216,8 +216,16 @@
             break;
             
         case OOEnginecolorPurple:
-        default:
             return [OOCoreColor purpleTile];
+            break;
+            
+        case OOEnginecolorOrange:
+            return [OOCoreColor orangeTile];
+            break;
+            
+        case OOEnginecolorPink:
+        default:
+            return [OOCoreColor pinkTile];
             break;
     }
     
@@ -247,8 +255,16 @@
             break;
             
         case OOEnginecolorPurple:
-        default:
             return NSLocalizedString(@"COLOR_purple", @"purple");
+            break;
+            
+        case OOEnginecolorOrange:
+            return NSLocalizedString(@"COLOR_orange", @"orange");
+            break;
+            
+        case OOEnginecolorPink:
+        default:
+            return NSLocalizedString(@"COLOR_pink", @"pink");
             break;
     }
     

@@ -20,7 +20,9 @@ typedef enum : NSUInteger {
     OOEnginecolorGreen,
     OOEnginecolorBlue,
     OOEnginecolorYellow,
-    OOEnginecolorPurple
+    OOEnginecolorPurple,
+    OOEnginecolorOrange,
+    OOEnginecolorPink,
 } OOEngineColor;
 
 @class OOEngine;
